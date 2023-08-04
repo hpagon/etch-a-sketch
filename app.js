@@ -15,8 +15,9 @@ for (let i = 0; i < size; i++) {
 
 let squares = document.querySelectorAll(".square");
 
-container.addEventListener("mousedown", () => {
+container.addEventListener("mousedown", (event) => {
   console.log("mouse down");
+  event.preventDefault()
   held();
 });
 

@@ -3,13 +3,23 @@ body {
 }
 
 header {
+    border: 1px solid black;
     display: flex;
     justify-content: center;
 }
 
+main {
+    border: 1px solid black;
+    display: flex;
+}
+
+#control {
+    border: 1px solid black;
+    width: 20%;
+}
+
 #container {
     border: 1px solid black;
-    margin: auto;
     width: 640px;
     height: 640px;
     display: flex;
