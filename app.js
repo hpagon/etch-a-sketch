@@ -1,6 +1,6 @@
 const container = document.querySelector("#container");
-let size = 16;
-let numSquare = size ** 2;
+
+let size = 32;
 
 for (let i = 0; i < size; i++) {
   let row = document.createElement("div");
@@ -11,4 +11,32 @@ for (let i = 0; i < size; i++) {
     row.appendChild(newSquare);
   }
   container.appendChild(row);
+}
+
+let squares = document.querySelectorAll(".square");
+
+container.addEventListener("mousedown", () => {
+  console.log("mouse down");
+  held();
+});
+
+container.addEventListener("mouseup", () => {
+  console.log("mouse up");
+  released();
+});
+
+function blackPen() {
+  this.classList.add("color");
+}
+
+function held() {
+  squares.forEach((square) => {
+    square.addEventListener("mouseenter", blackPen);
+  });
+}
+
+function released() {
+  squares.forEach((square) => {
+    square.removeEventListener("mouseenter", blackPen);
+  });
 }
