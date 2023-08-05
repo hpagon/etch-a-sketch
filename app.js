@@ -13,6 +13,7 @@ let rows;
 let size = 16;
 let mode = 0;
 let selected = blackButton;
+let grid = false;
 blackButton.classList.add("selected");
 
 function drawBoard() {
@@ -28,6 +29,7 @@ function drawBoard() {
   }
   squares = document.querySelectorAll(".square");
   rows = document.querySelectorAll(".row");
+  if(grid === true) showGrid();
 }
 
 drawBoard();
@@ -146,7 +148,13 @@ function updateSelected(event) {
 
 function showGrid() {
   squares.forEach((square) => {
-    square.classList.toggle("grid");
+    square.classList.add("grid");
+  });
+}
+
+function removeGrid() {
+  squares.forEach((square) => {
+    square.classList.remove("grid");
   });
 }
 
@@ -189,5 +197,12 @@ clearButton.addEventListener("click", () => {
 });
 
 checkbox.addEventListener("click", () => {
+  if (grid === false) {
+    grid = true;
     showGrid();
+  }
+  else{
+    grid = false;
+    removeGrid();
+  }
 });
