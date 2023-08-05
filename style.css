@@ -1,31 +1,25 @@
-/* color pallete link https://coolors.co/palette/7400b8-6930c3-5e60ce-5390d9-4ea8de-48bfe3-56cfe1-64dfdf-72efdd-80ffdb */
 body {
-  border: 1px solid black;
   font-family: "Libre Franklin";
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-image: linear-gradient(to bottom right, #7400b8, #80ffdb);
+  background-color: #979DAC;
 }
 
 header {
-  /* border: 1px solid black; */
   display: flex;
   justify-content: center;
   font-size: 24px;
   font-weight: 400;
-  /* height: 10vh; */
+  color: #001233;
 }
 
 main {
-  /* border: 1px solid black; */
   display: flex;
-  /* height: 90vh; */
   justify-content: center;
 }
 
 #control {
-  /* border: 1px solid black; */
   width: 20%;
   display: flex;
   flex-direction: column;
@@ -36,7 +30,6 @@ main {
 
 #container {
   margin-left: 20px;
-  /* border: 1px solid black; */
   width: 580px;
   height: 580px;
   display: flex;
@@ -62,23 +55,19 @@ main {
   border: 1px solid black;
 }
 
-.color {
-  background-color: black;
-}
-
 .selected {
-  background-color: #80ffdb;
-  color: #7400b8;
+  background-color: #5C677D;
+  color: white;
 }
 
 button {
-  color: #80ffdb;
+  color: #001233;
   font-size: 20px;
   font-weight: 560;
   height: 40px;
   border-radius: 12px;
   margin-bottom: 20px;
-  background-color: #7400b8;
+  background-color: #979DAC;
   width: 80%;
 }
 
@@ -88,16 +77,19 @@ button:hover {
 }
 
 label {
-  color: #7400b8;
+  color: #001233;
   font-weight: 560;
   font-size: 20px;
 }
 
 input[type="range"] {
-  accent-color: #80ffdb;
+  cursor: pointer;
+  accent-color: #001233;
+  margin-bottom: 10px;
 }
 
 input[type="color"] {
+  cursor: pointer;
   border: 0;
   background: none;
   height: 35px;
@@ -112,4 +104,8 @@ input[type="color"]::-webkit-color-swatch {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+input[type='checkbox'] {
+  cursor: pointer;
 }
