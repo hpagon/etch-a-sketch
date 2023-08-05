@@ -7,10 +7,13 @@ const colorButton = document.querySelector("#color");
 const randomButton = document.querySelector("#random");
 const eraserButton = document.querySelector("#eraser");
 const clearButton = document.querySelector("#clear");
+const checkbox = document.querySelector("#checkbox");
 let squares;
 let rows;
 let size = 16;
 let mode = 0;
+let selected = blackButton;
+blackButton.classList.add("selected");
 
 function drawBoard() {
   for (let i = 0; i < size; i++) {
@@ -133,6 +136,20 @@ function released() {
   }
 }
 
+function updateSelected(event) {
+  console.log(event.target.id);
+  selected.classList.remove("selected");
+  if (event.target.id === "colorPicker") selected = colorButton;
+  else selected = event.target;
+  selected.classList.add("selected");
+}
+
+function showGrid() {
+  squares.forEach((square) => {
+    square.classList.toggle("grid");
+  });
+}
+
 slider.addEventListener("change", () => {
   eraseBoard();
   drawBoard();
@@ -143,26 +160,34 @@ slider.addEventListener("input", () => {
   size = slider.value;
 });
 
-blackButton.addEventListener("click", () => {
+blackButton.addEventListener("click", (e) => {
+  updateSelected(e);
   released();
   mode = 0;
 });
 
-colorButton.addEventListener("click", () => {
+colorButton.addEventListener("click", (e) => {
+  updateSelected(e);
   released();
   mode = 1;
 });
 
-randomButton.addEventListener("click", () => {
+randomButton.addEventListener("click", (e) => {
+  updateSelected(e);
   released();
   mode = 2;
 });
 
-eraserButton.addEventListener("click", () => {
+eraserButton.addEventListener("click", (e) => {
+  updateSelected(e);
   mode = 3;
 });
 
 clearButton.addEventListener("click", () => {
   eraseBoard();
   drawBoard();
+});
+
+checkbox.addEventListener("click", () => {
+    showGrid();
 });

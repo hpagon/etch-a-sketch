@@ -5,21 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Libre Franklin:100,400,900"
+    />
   </head>
   <body>
     <header>
-      <h1>Etch-a-Sketch</h1>
+      <h1><strong>Etch-a-Sketch</strong></h1>
     </header>
     <main>
       <div id="control">
         <button id="black">Black</button>
-        <input type="color" id="colorPicker" />
-        <button id="color">Color</button>
+        <button id="color"><input type="color" id="colorPicker" />Color</button>
         <button id="random">Random</button>
         <button id="eraser">Eraser</button>
         <button id="clear">Clear</button>
         <label for="size" id="sliderLabel">Grid Size: 16 x 16</label>
         <input type="range" name="size" id="size" min="1" max="64" value="16" />
+        <div>
+          <label for="checkbox">Grid</label>
+          <input type="checkbox" id="checkbox" />
+        </div>
       </div>
       <div id="container"></div>
     </main>
